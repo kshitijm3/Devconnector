@@ -11,6 +11,10 @@ const PORT = process.env.PORT || 5000
 
 connectDB()
 
+//Init Middleware
+
+app.use(express.json({ extended : false }))
+
 app.use('/api/users' , require('./routes/apis/users'))
 app.use('/api/auth' , require('./routes/apis/auth'))
 app.use('/api/profiles' , require('./routes/apis/profiles'))
